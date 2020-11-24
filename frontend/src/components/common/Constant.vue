@@ -2,32 +2,18 @@
 export default {
   data() {
     const CODES = {
-      LOCALES : {
-        ko_KR: {
-          code: 'ko_KR',
-          lang: 'KO',
-          displayName: 'KOR',
-          noticeLang: 'KOREAN'
+      CURRENCY : {
+        KRW: {
+          code: 'KRW',
+          displayName: '한국(KRW)'
         },
-        ja_JP: {
-          code: 'ja_JP',
-          lang: 'JA',
-          displayName: 'JPN',
-          noticeLang: 'JAPANESE'
+        JPY: {
+          code: 'JPY',
+          displayName: '일본(JPY)'
         },
-        en_US: {
-          code: 'en_US',
-          lang: 'en',
-          faqAlias: 'cloud_en',
-          displayName: 'ENG',
-          noticeLang: 'ENGLISH'
-        },
-        zh_CN: {
-          code: 'zh_CN',
-          lang: 'zh',
-          faqAlias: 'cloud_cn',
-          displayName: 'CHN',
-          noticeLang: 'CHINESE'
+        PHP: {
+          code: 'PHP',
+          displayName: '필리핀(PHP)'
         }
       },
       ERROR_HTTP_STATUS: {

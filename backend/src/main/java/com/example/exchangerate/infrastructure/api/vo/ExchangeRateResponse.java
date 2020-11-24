@@ -1,7 +1,9 @@
 package com.example.exchangerate.infrastructure.api.vo;
 
+import com.example.exchangerate.common.util.MoneySerializer;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -36,13 +38,13 @@ public class ExchangeRateResponse {
     @Setter
     public static class Quotes {
         @JsonProperty("USDKRW")
-        @JsonFormat(shape = JsonFormat.Shape.NUMBER_FLOAT)
+        @JsonSerialize(using = MoneySerializer.class)
         private BigDecimal USDKRW;
         @JsonProperty("USDJPY")
-        @JsonFormat(shape = JsonFormat.Shape.NUMBER_FLOAT)
+        @JsonSerialize(using = MoneySerializer.class)
         private BigDecimal USDJPY;
         @JsonProperty("USDPHP")
-        @JsonFormat(shape = JsonFormat.Shape.NUMBER_FLOAT)
+        @JsonSerialize(using = MoneySerializer.class)
         private BigDecimal USDPHP;
     }
 

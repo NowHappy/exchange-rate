@@ -3,7 +3,7 @@ import { filter, tap } from 'rxjs/operators'
 import { apiService } from '@Common/services/api-service'
 
 const state = {
-  rates : []
+  rates : {}
 }
 
 const mutations = {
@@ -15,8 +15,8 @@ const mutations = {
 const actions = {
   getRates({ commit }) {
     return apiService.getRates$()
-        .pipe(filter(data => data.results != null)
-              ,tap(data => commit('setRates', data.results)))
+        .pipe(filter(data => data != null)
+              ,tap(data => commit('setRates', data)))
         .toPromise()
   }
 }

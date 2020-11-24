@@ -1,7 +1,6 @@
 package com.example.exchangerate.application;
 
 import com.example.exchangerate.domain.ExchangeRateChecker;
-import com.example.exchangerate.infrastructure.api.vo.ExchangeRateResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -21,9 +20,9 @@ public class ExchangeRateHandler {
 
     public Mono<ServerResponse> getRates(ServerRequest request) {
         return exchangeRateChecker.getRates()
-        .flatMap(rates -> ok()
-            .contentType(APPLICATION_JSON)
-            .bodyValue(rates));
+            .flatMap(rates -> ok()
+                .contentType(APPLICATION_JSON)
+                .bodyValue(rates));
     }
 
 }
